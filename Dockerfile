@@ -13,6 +13,8 @@ RUN git clone https://github.com/tanmx/Telegram-Name-Updating.git /Telegram-Name
         && cd /Telegram-Name-Updating \
         && mkdir logs \
         && pip3 install -r requirements.txt \
+        #复制api_auth.session文件到项目目录，如果没有请使用sh启动容器
+        # &&cp api_auth.session /Telegram-Name-Updating \
         && rm -rf ~/.cache/pip
 
 WORKDIR /Telegram-Name-Updating
