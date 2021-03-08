@@ -11,7 +11,8 @@ RUN set -ex \
 
 RUN git clone https://github.com/tanmx/Telegram-Name-Updating.git /Telegram-Name-Updating \
         && cd /Telegram-Name-Updating && mkdir logs \
-        && pip3 install -r requirements.txt
+        && pip3 install -r requirements.txt \
+        && rm -rf ~/.cache/pip
 
 RUN cp /Telegram-Name-Updating/docker_entrypoint.sh /usr/local/bin \
         && chmod +x /usr/local/bin/docker_entrypoint.sh
