@@ -15,8 +15,5 @@ RUN git clone https://github.com/tanmx/Telegram-Name-Updating.git /Telegram-Name
         && pip3 install -r requirements.txt \
         && rm -rf ~/.cache/pip
 
-RUN cp /Telegram-Name-Updating/docker_entrypoint.sh /usr/local/bin \
-        && chmod +x /usr/local/bin/docker_entrypoint.sh
-
 WORKDIR /Telegram-Name-Updating
-ENTRYPOINT ["docker_entrypoint.sh"]
+CMD nohup python3 tg_username_update.py >> /Telegram-Name-Updating/logs/tg_username_update.log 2>&1 &
