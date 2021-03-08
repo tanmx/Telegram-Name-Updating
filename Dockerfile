@@ -11,7 +11,7 @@ RUN set -ex \
 
 RUN git clone https://github.com/tanmx/Telegram-Name-Updating.git /Telegram-Name-Updating \
         && cd /Telegram-Name-Updating \
-        && mkdir logs \
+        && mkdir logs && touch logs/tg_username_update.log \
         && pip3 install -r requirements.txt \
         && rm -rf ~/.cache/pip
 
