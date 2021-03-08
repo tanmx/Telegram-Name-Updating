@@ -13,9 +13,10 @@ RUN git clone https://github.com/tanmx/Telegram-Name-Updating.git /Telegram-Name
         && cd /Telegram-Name-Updating \
         && mkdir logs \
         && pip3 install -r requirements.txt \
-        # 复制api_auth.session文件到项目目录，如果没有请使用sh启动容器
-        # &&cp api_auth.session /Telegram-Name-Updating \
         && rm -rf ~/.cache/pip
+       
+# 复制api_auth.session文件到项目目录，如果没有请使用sh启动容器
+# COPY api_auth.session /Telegram-Name-Updating \
 
 WORKDIR /Telegram-Name-Updating
 CMD nohup python3 tg_username_update.py >> /Telegram-Name-Updating/logs/tg_username_update.log 2>&1 &
