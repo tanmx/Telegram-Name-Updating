@@ -1,5 +1,6 @@
 FROM alpine
 MAINTAINER tanmx <tanmingxiao@gmail.com>
+
 RUN set -ex \
         && apk update && apk upgrade \
         && apk add --no-cache tzdata git python3 py3-setuptools \
