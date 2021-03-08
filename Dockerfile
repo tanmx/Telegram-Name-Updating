@@ -19,4 +19,4 @@ RUN git clone https://github.com/tanmx/Telegram-Name-Updating.git /Telegram-Name
 # COPY api_auth.session /Telegram-Name-Updating
 
 WORKDIR /Telegram-Name-Updating
-CMD nohup python3 tg_username_update.py >> /Telegram-Name-Updating/logs/tg_username_update.log 2>&1 &
+CMD ["nohup", "python3", "tg_username_update.py", ">>", "/Telegram-Name-Updating/logs/tg_username_update.log", "2>&1", "&"]
