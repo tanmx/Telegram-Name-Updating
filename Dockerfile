@@ -10,7 +10,7 @@ RUN set -ex \
         && rm -rf /var/cache/apk/*
 
 RUN git clone https://github.com/tanmx/Telegram-Name-Updating.git /Telegram-Name-Updating \
-        && cd /Telegram-Name-Updating && mkdir logs \
+        && cd /Telegram-Name-Updating \
         && pip3 install -r requirements.txt \
         && rm -rf ~/.cache/pip
 
