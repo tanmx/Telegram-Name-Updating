@@ -10,7 +10,7 @@ RUN set -ex \
         && rm -rf /var/cache/apk/* \
 
 RUN git clone https://github.com/tanmx/Telegram-Name-Updating.git /Telegram-Name-Updating \
-        && cd /Telegram-Name-Updating \
+        && cd /Telegram-Name-Updating && mkdir logs \
         && pip3 install -r requirements.txt
 
 RUN cp /Telegram-Name-Updating/docker_entrypoint.sh /usr/local/bin \
